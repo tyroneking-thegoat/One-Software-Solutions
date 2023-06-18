@@ -1,0 +1,143 @@
+.banner {
+  background: linear-gradient(rgba(0, 133, 62, 0.5), rgba(0, 183, 74, 0.5)),
+    url('https://cdn.pixabay.com/photo/2013/02/05/15/18/landscape-78058_1280.jpg');
+  background-size: 100%;
+  background-position: center top -20px;
+  padding: 30px;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.banner-content {
+  transform: rotate(-2deg);
+}
+
+.greeting {
+  font-size: 2em;
+  font-family: 'Pacifico', cursive;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-quote {
+  font-size: 1em;
+  font-family: 'Dancing Script', cursive;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  background-color: #00853E;
+  position: relative;
+  z-index: 1;
+}
+
+.dropdown-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  background-color: #00853E;
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.navbar:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+.dropdown-menu a:hover {
+  color: #00B74A;
+}
+
+.profile-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.profile-button img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  background-color: #00853E;
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.profile-button:hover + .profile-dropdown,
+.profile-dropdown:hover {
+  display: flex;
+}
+
+.my-daily-goals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.goal-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.goal-label {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.goal-value {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.chart-container {
+  width: 100px;
+  height: 100px;
+}
