@@ -1,7 +1,7 @@
 .banner {
   background: linear-gradient(rgba(0, 133, 62, 0.5), rgba(0, 183, 74, 0.5)),
     url('https://cdn.pixabay.com/photo/2013/02/05/15/18/landscape-78058_1280.jpg');
-  background-size: 100%;
+  background-size: cover;
   background-position: center top -20px;
   padding: 30px;
   color: white;
@@ -140,4 +140,15 @@
 .chart-container {
   width: 100px;
   height: 100px;
+  position: relative;
+}
+
+.chart-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9em;
+  color: #000000;
+  font-weight: bold;
 }
