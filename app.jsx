@@ -1,25 +1,33 @@
 import React, { useState } from 'react';
-import './Header.css'; // Import the CSS file
+import './Header.css';
 import { PieChart } from 'react-minimal-pie-chart';
 
 const Banner = ({ username }) => {
   return (
     <div className="banner">
       <div className="banner-content">
-        <h1 className="greeting">Hello, John Doe{username}</h1>
+        <h1 className="greeting">Hello, {username}</h1>
         <p className="welcome-quote">Welcome to your Healthier Lifestyle!</p>
       </div>
     </div>
   );
-}
+};
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const toggleProfileDropdown = () => {
+    setIsProfileOpen(!isProfileOpen);
+  };
+
   return (
     <nav className="navbar">
-      <button onClick={() => setIsOpen(!isOpen)} className="dropdown-button">
+      <button onClick={toggleDropdown} className="dropdown-button">
         ☰
       </button>
 
@@ -31,7 +39,7 @@ const Navbar = () => {
         </div>
       )}
 
-      <button onClick={() => setIsProfileOpen(!isProfileOpen)} className="profile-button">
+      <button onClick={toggleProfileDropdown} className="profile-button">
         <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" alt="Profile" />
       </button>
 
@@ -46,73 +54,46 @@ const Navbar = () => {
       )}
     </nav>
   );
-}
+};
 
 const MyDailyGoals = () => {
   // Placeholder data
-  const calorieGoal = 2000;
-  const calorieRemaining = 1500;
-  const carbGoal = 150;
-  const carbRemaining = 100;
-  const proteinGoal = 100;
-  const proteinNeeded = 50;
+  const goals = [
+    { label: 'Calories', goal: 2000, remaining: 1500 },
+    { label: 'Carbs', goal: 150, remaining: 100 },
+    { label: 'Protein', goal: 100, remaining: 50 },
+  ];
+
+  const calculatePercentage = (value, goal) => {
+    const percentage = (value / goal) * 100;
+    return percentage.toFixed(1);
+  };
 
   return (
     <div className="my-daily-goals">
-      <div className="goal-item">
-        <span className="goal-label">Calories Remaining:</span>
-        <span className="goal-value">{calorieRemaining} kcal</span>
-        <div className="chart-container">
-          <PieChart
-            data={[
-              { value: calorieRemaining, color: '#00853E' },
-              { value: calorieGoal - calorieRemaining, color: '#CCCCCC' },
-            ]}
-            lineWidth={15}
-            paddingAngle={0}
-            rounded
-            startAngle={90}
-            animate
-          />
+      {goals.map((goal, index) => (
+        <div className="goal-item" key={index}>
+          <span className="goal-label">{goal.label} Remaining:</span>
+          <span className="goal-value">{goal.remaining} {goal.label === 'Calories' ? 'kcal' : 'g'}</span>
+          <div className="chart-container">
+            <PieChart
+              data={[
+                { value: goal.remaining, color: '#00853E' },
+                { value: goal.goal - goal.remaining, color: '#CCCCCC' },
+              ]}
+              lineWidth={15}
+              paddingAngle={0}
+              rounded
+              startAngle={90}
+              animate
+            />
+            <div className="chart-percentage">{calculatePercentage(goal.remaining, goal.goal)}%</div>
+          </div>
         </div>
-      </div>
-      <div className="goal-item">
-        <span className="goal-label">Carbs Remaining:</span>
-        <span className="goal-value">{carbRemaining} g</span>
-        <div className="chart-container">
-          <PieChart
-            data={[
-              { value: carbRemaining, color: '#00853E' },
-              { value: carbGoal - carbRemaining, color: '#CCCCCC' },
-            ]}
-            lineWidth={15}
-            paddingAngle={0}
-            rounded
-            startAngle={90}
-            animate
-          />
-        </div>
-      </div>
-      <div className="goal-item">
-        <span className="goal-label">Protein Needed:</span>
-        <span className="goal-value">{proteinNeeded} g</span>
-        <div className="chart-container">
-          <PieChart
-            data={[
-              { value: proteinNeeded, color: '#00853E' },
-              { value: proteinGoal - proteinNeeded, color: '#CCCCCC' },
-            ]}
-            lineWidth={15}
-            paddingAngle={0}
-            rounded
-            startAngle={90}
-            animate
-          />
-        </div>
-      </div>
+      ))}
     </div>
   );
-}
+};
 
 const Header = ({ username }) => {
   return (
@@ -125,6 +106,6 @@ const Header = ({ username }) => {
       </div>
     </>
   );
-}
+};
 
 export default Header;
