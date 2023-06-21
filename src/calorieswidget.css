@@ -1,0 +1,59 @@
+.goal-widget {
+    background-color: lightblue;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1400px;
+    height: 200px;
+    border-radius: 10px;
+  }
+  
+  
+  .goal-item {
+    width: 400px;
+    height: 200px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    color: blue;
+    
+  }
+  
+  .goal-label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .goal-value {
+    margin-right: 10px;
+  }
+  
+  .chart-container {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+  }
+  
+  /* Additional styles for the PieChart */
+  .PieChart {
+    width: 100%;
+    height: 50%;
+  }
+  
+  .widget-title {
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+    color: darkblue;
+    
+  }
+ 
+  
