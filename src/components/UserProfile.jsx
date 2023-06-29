@@ -29,7 +29,7 @@ const UserProfile = () => {
         />
         <div>
           <p className="font-semibold text-xl dark:text-gray-200"> Tony Stark </p>
-          <p className="text-gray-500 text-sm dark:text-gray-400">  Beginer   </p>
+          <p className="text-gray-500 text-sm dark:text-gray-400">  Beginner   </p>
           <p className="text-gray-500 text-sm font-semibold dark:text-gray-400"> ironman123 </p>
         </div>
       </div>
