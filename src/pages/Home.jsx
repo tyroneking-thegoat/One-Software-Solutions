@@ -2,6 +2,7 @@ import React from 'react';
 import { BsCurrencyDollar } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { IoIosMore, IoIosFitness } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 
@@ -34,7 +35,7 @@ const Home = () => {
               {/* not working yet
               <Pie id="pie-chart" data={CaloriesBurntPie} legendVisiblity={false} height="160px" /> */}
        
-            
+            <Link to="/setting" className="text-2xl opacity-0.9"> 
             <button
               type="button"
               style={{ backgroundColor: currentColor }}
@@ -42,6 +43,7 @@ const Home = () => {
             >
               <IoIosFitness/>
             </button>
+            </Link>
 
           </div>
           <div className="mt-6">
@@ -65,7 +67,7 @@ const Home = () => {
               {/* not working yet
               <Pie id="pie-chart" data={CaloriesBurntPie} legendVisiblity={false} height="160px" /> */}
        
-            
+            <Link to="/setting" className="text-2xl opacity-0.9"> 
             <button
               type="button"
               style={{ backgroundColor: currentColor }}
@@ -73,7 +75,8 @@ const Home = () => {
             >
               <IoIosFitness/>
             </button>
-
+            </Link>
+            
           </div>
           <div className="mt-6">
             <Button
@@ -136,12 +139,14 @@ const Home = () => {
                 here. There could be some great info.
               </p>
               <div className="mt-3">
+              <Link to="/search" className="text-2xl opacity-0.9"> 
                 <Button
                   color="white"
                   bgColor={currentColor}
                   text="Search"
                   borderRadius="10px"
                 />
+                </Link>
               </div>
             </div>
           </div>

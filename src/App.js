@@ -9,6 +9,8 @@ import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
 import Home from './pages/Home';
+import Search from './pages/search';
+import Setting from './pages/setting';
 
 const App = () => {
   const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
@@ -70,7 +72,9 @@ const App = () => {
                 <Route path="/home" element={(<Home />)} />
 
                 {/* pages  */}
-                <Route path="/search" element={<search/>} />
+                <Route path="/search" element={<Search/>} />
+                <Route path="/setting" element={<Setting/>} />
+                
                 
 
               </Routes>
