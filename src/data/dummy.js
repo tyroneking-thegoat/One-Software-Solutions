@@ -83,7 +83,7 @@ export const themeColors = [
   },
   {
     name: 'green-theme',
-    color: '#03C9D7',
+    color: '#00853E',
   },
   {
     name: 'purple-theme',
