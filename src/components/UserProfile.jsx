@@ -5,9 +5,17 @@ import { Button } from '.';
 import { userProfileData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 import ironman from '../data/ironman.jpg';
+import { UseSettingsContext } from '../pages/setting';
+
 
 const UserProfile = () => {
   const { currentColor } = useStateContext();
+  //const { name } = UseSettingsContext();
+
+  //get data from local storage and assigned it to name,  email then replace the text at line 39-42 with it
+  let name = localStorage.getItem('name');
+  let email = localStorage.getItem('email');
+
 
   return (
     <div className="nav-item absolute right-1 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
@@ -28,9 +36,9 @@ const UserProfile = () => {
           alt="user-profile"
         />
         <div>
-          <p className="font-semibold text-xl dark:text-gray-200"> Tony Stark </p>
-          <p className="text-gray-500 text-sm dark:text-gray-400">  Beginner   </p>
-          <p className="text-gray-500 text-sm font-semibold dark:text-gray-400"> ironman123 </p>
+          <p className="font-semibold text-xl dark:text-gray-200"> {name} </p>
+          {/* <p className="text-gray-500 text-sm dark:text-gray-400">  Beginner   </p> */}
+          <p className="text-gray-500 text-sm font-semibold dark:text-gray-400"> {email} </p>
         </div>
       </div>
       
