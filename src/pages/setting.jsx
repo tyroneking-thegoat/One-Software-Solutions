@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Setting = () => {
+const Settings = () => {
   const [name, setName] = useState('');
   const [lastname, setLastname] = useState('');
   const [email, setEmail] = useState('');
@@ -51,11 +51,11 @@ const Setting = () => {
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-4">User Settings</h1>
+      <h1 className="text-3xl font-bold mb-4 ml-12">User Settings</h1>
       <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
         <div className="mb-4">
           <label htmlFor="name" className="block font-semibold mb-1">
-            Name
+            First Name
           </label>
           <input
             type="text"
@@ -79,7 +79,7 @@ const Setting = () => {
         </div>
         <div className="mb-4">
           <label htmlFor="email" className="block font-semibold mb-1">
-            Email
+            Email Address
           </label>
           <input
             type="email"
@@ -91,7 +91,7 @@ const Setting = () => {
         </div>
         <div className="mb-4">
           <label htmlFor="caloriesBurntGoal" className="block font-semibold mb-1">
-            Calories Burnt Goal
+            Calorie Burn Goal
           </label>
           <input
             type="number"
@@ -103,7 +103,7 @@ const Setting = () => {
         </div>
         <div className="mb-4">
           <label htmlFor="caloriesIntakeGoal" className="block font-semibold mb-1">
-            Calories Intake Goal
+            Calorie Intake Goal
           </label>
           <input
             type="number"
@@ -124,4 +124,4 @@ const Setting = () => {
   );
 };
 
-export default Setting;
+export default Settings;

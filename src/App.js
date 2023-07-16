@@ -4,7 +4,7 @@ import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Pie } from './pages';
+//import { Pie } from './pages';
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';

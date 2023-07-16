@@ -95,32 +95,16 @@ const Home = () => {
           <div className="flex justify-between"></div>
       <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-full p-8 m-3 flex justify-center items-center gap-10">
             <div>
-              <p className="text-3xl font-semibold ">Calories Burnt</p>
-              <p className="text-gray-400">Summary</p>
+              <p className="text-3xl font-semibold ">Today's Summary</p>
             </div>
 
-            <div className="w-60">
+            <div className="w-80">
               <Pie id="piechart" data={CaloriesBurntPie} legendVisiblity={false} height="300px" />
             </div>
           </div>
         </div>
         </div>
 
-        <div className="flex gap-10 flex-wrap justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-full  ">
-          <div className="flex justify-between"></div>
-      <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-full p-8 m-3 flex justify-center items-center gap-10">
-            <div>
-              <p className="text-3xl font-semibold ">Calories Intake</p>
-              <p className="text-gray-400">Summary</p>
-            </div>
-
-            <div className="w-60">
-              <Pie id="pie-chart1" data={CaloriesIntakePie} legendVisiblity={false} height="300px" />
-            </div>
-          </div>
-        </div>
-        </div>
 
       <div className="flex gap-10 m-6 flex-wrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg w-full justify-center p-6 rounded-2xl">
