@@ -17,14 +17,8 @@ const DropDown = ({ currentMode }) => (
   </div>
 );
 
-//get user's goal from local storage replace text with real value at line 37, line 69
-let UsercaloriesBurntGoal = localStorage.getItem('caloriesBurntGoal');
-let UsercaloriesIntakeGoal = localStorage.getItem('caloriesIntakeGoal');
-
-
 const Home = () => {
   const { currentColor, currentMode } = useStateContext();
-
 
   return (
   
@@ -34,7 +28,7 @@ const Home = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">My Workout</p>
-              <p className="text-2xl">1500/{UsercaloriesBurntGoal} Cal</p> 
+              <p className="text-2xl">1500/1800 Cal</p>
             </div>
 
            
@@ -66,7 +60,7 @@ const Home = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">My Calories </p>
-              <p className="text-2xl">1000/{UsercaloriesIntakeGoal} Cal</p>
+              <p className="text-2xl">1000/1200 Cal</p>
             </div>
 
            
@@ -101,16 +95,32 @@ const Home = () => {
           <div className="flex justify-between"></div>
       <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-full p-8 m-3 flex justify-center items-center gap-10">
             <div>
-              <p className="text-3xl font-semibold ">Today's Summary</p>
+              <p className="text-3xl font-semibold ">Calories Burnt</p>
+              <p className="text-gray-400">Summary</p>
             </div>
 
-            <div className="w-80">
+            <div className="w-60">
               <Pie id="piechart" data={CaloriesBurntPie} legendVisiblity={false} height="300px" />
             </div>
           </div>
         </div>
         </div>
 
+        <div className="flex gap-10 flex-wrap justify-center">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-full  ">
+          <div className="flex justify-between"></div>
+      <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-full p-8 m-3 flex justify-center items-center gap-10">
+            <div>
+              <p className="text-3xl font-semibold ">Calories Intake</p>
+              <p className="text-gray-400">Summary</p>
+            </div>
+
+            <div className="w-60">
+              <Pie id="pie-chart1" data={CaloriesIntakePie} legendVisiblity={false} height="300px" />
+            </div>
+          </div>
+        </div>
+        </div>
 
       <div className="flex gap-10 m-6 flex-wrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg w-full justify-center p-6 rounded-2xl">
