@@ -17,8 +17,14 @@ const DropDown = ({ currentMode }) => (
   </div>
 );
 
+//get user's goal from local storage replace text with real value at line 37, line 69
+let UsercaloriesBurntGoal = localStorage.getItem('caloriesBurntGoal');
+let UsercaloriesIntakeGoal = localStorage.getItem('caloriesIntakeGoal');
+
+
 const Home = () => {
   const { currentColor, currentMode } = useStateContext();
+
 
   return (
   
@@ -28,7 +34,7 @@ const Home = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">My Workout</p>
-              <p className="text-2xl">1500/1800 Cal</p>
+              <p className="text-2xl">1500/{UsercaloriesBurntGoal} Cal</p> 
             </div>
 
            
@@ -60,7 +66,7 @@ const Home = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">My Calories </p>
-              <p className="text-2xl">1000/1200 Cal</p>
+              <p className="text-2xl">1000/{UsercaloriesIntakeGoal} Cal</p>
             </div>
 
            

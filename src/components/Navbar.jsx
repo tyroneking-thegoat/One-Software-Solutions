@@ -11,6 +11,10 @@ import avatar from '../data/avatar.jpg';
 import { Chat, Notification, UserProfile } from '.';
 import { useStateContext } from '../contexts/ContextProvider';
 
+//get name from setting, which has been store in local storage
+let name = localStorage.getItem('name');
+
+
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
   <TooltipComponent content={title} position="BottomCenter">
     <button
@@ -72,7 +76,7 @@ const Navbar = () => {
             <p>
               <span className="text-gray-400 text-14">Hi,</span>{' '}
               <span className="text-gray-400 font-bold ml-1 text-14">
-                Tony
+                {name}
               </span>
             </p>
             <MdKeyboardArrowDown className="text-gray-400 text-14" />
