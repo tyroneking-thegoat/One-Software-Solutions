@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import { DataGrid } from "@mui/x-data-grid";
 import papa from "papaparse";
 import data from "./nutrients_csvfil.csv";
@@ -30,6 +32,14 @@ export default function DataTable() {
   });
 
   return (
+    <Box
+      sx={{
+        width: 800,
+        maxWidth: '100%',
+      }}
+      justifyContent="center"
+    >
+      <TextField fullWidth label="fullwidth" id="fullWidth" />
     <div style={{ height: 400, width: "100%" }}>
       <DataGrid
         rows={data1}
@@ -44,5 +54,6 @@ export default function DataTable() {
         checkboxSelection
       />
     </div>
+    </Box>
   );
 }
