@@ -176,13 +176,11 @@ export const dropdownData = [
 
 
 export const pieChartData = [
-  { x: 'Labour', y: 18, text: '18%' },
-  { x: 'Legal', y: 8, text: '8%' },
-  { x: 'Production', y: 15, text: '15%' },
-  { x: 'License', y: 11, text: '11%' },
-  { x: 'Facilities', y: 18, text: '18%' },
-  { x: 'Taxes', y: 14, text: '14%' },
-  { x: 'Insurance', y: 16, text: '16%' },
+  ["Calories", "totalcalories"],
+  ["Calories Burned", 0],
+  ["Calories Consumed", 0],
+  ["Exercise Goal", 0],
+  ["Intake Goal", 0],
 ];
 
 export const contextMenuItems = [
@@ -212,17 +210,19 @@ export const ecomPieChartData = [
 ];
 
 export const CaloriesBurntPie = [
-  { x: 'Running', y: 450, text: '25%' },
-  { x: 'Lifting', y: 450, text: '25%' },
-  { x: 'Carido', y: 540, text: '30%' },
-  { x: 'Incomplete', y: 360, text: '20%' },
+  ["Calories", "totalcalories"],
+  ["Calories Burned", 400],
+  ["Calories Consumed", 0],
+  ["Exercise Goal", 450], // replace 450 with the actual calorie burn goal minus today's logged calorie burn (400 in this example)
+  ["Intake Goal", 0],
 ];
 
 export const CaloriesIntakePie = [
-  { x: 'Breakfast', y: 300, text: '25%' },
-  { x: 'Lunch', y: 450, text: '38%' },
-  { x: 'Snack', y: 250, text: '20%' },
-  { x: 'Incomplete', y: 200, text: '17%' },
+  ["Calories", "totalcalories"],
+  ["Calories Burned", 0],
+  ["Calories Consumed", 200],
+  ["Exercise Goal", 0],
+  ["Intake Goal", 850], // replace 850 with the actual calorie intake goal minus today's logged calorie intake (200 in this example)
 ];
 
 export const stackedChartData = [
