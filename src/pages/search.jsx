@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from "react";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 import { DataGrid } from "@mui/x-data-grid";
 import papa from "papaparse";
-import data from "./nutrients_csvfil.csv";
+import data from "./food1.csv";
 
 const columns = [
-  { field: "Food", headerName: "Food", width: 130 },
+  { field: "ID", headerName: "ID", width: 75 },
+  { field: "Food", headerName: "Food", width: 250 },
   { field: "Measure", headerName: "Measure", width: 100 },
-  { field: "Grams", headerName: "Grams", width: 100 },
   { field: "Calories", headerName: "Calories", width: 100 },
-  { field: "Protein", headerName: "Protein", width: 100 },
+  { field: "Protien", headerName: "Protein", width: 100 },
   { field: "Fat", headerName: "Fat", width: 100 },
-  { field: "Sat.Fat", headerName: "Sat.Fat", width: 100 },
-  { field: "Fiber", headerName: "Fiber", width: 100 },
-  { field: "Carbs", headerName: "Carbs", width: 100 },
-  { field: "Category", headerName: "Category", width: 100 }
+  { field: "Carbs", headerName: "Carbs", width: 100 }
 ];
 
 export default function DataTable() {
@@ -48,12 +45,12 @@ export default function DataTable() {
     });
     setFilteredData(filtered);
   }, [data1, searchQuery]);
-  
+
   return (
     <Box
       sx={{
         width: 800,
-        maxWidth: '100%',
+        maxWidth: "100%"
       }}
       justifyContent="center"
     >
@@ -62,21 +59,22 @@ export default function DataTable() {
         label="Search"
         id="search"
         value={searchQuery}
-        onChange={handleSearchChange}/>
-    <div style={{ height: 400, width: "100%" }}>
-      <DataGrid
-        rows={filteredData}
-        columns={columns}
-        getRowId={(data1) => data1.Grams}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 5 }
-          }
-        }}
-        pageSizeOptions={[5, 10]}
-        checkboxSelection
+        onChange={handleSearchChange}
       />
-    </div>
+      <div style={{ height: 400, width: "100%" }}>
+        <DataGrid
+          rows={filteredData}
+          columns={columns}
+          getRowId={(data1) => data1.ID}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 100 }
+            }
+          }}
+          pageSizeOptions={[5, 10, 25, 50, 100]}
+          checkboxSelection
+        />
+      </div>
     </Box>
   );
 }
