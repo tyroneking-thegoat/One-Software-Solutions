@@ -20,17 +20,35 @@ const columns = [
 
 export default function DataTable() {
   const [data1, setData] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
 
-  papa.parse(data, {
-    dynamicTyping: true,
-    header: true,
-    download: true,
-    skipEmptyLines: true,
-    complete: function (result) {
-      setData(result.data);
-    }
-  });
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
 
+  useEffect(() => {
+    // Parse data only once during initial render
+    papa.parse(data, {
+      dynamicTyping: true,
+      header: true,
+      download: true,
+      skipEmptyLines: true,
+      complete: function (result) {
+        setData(result.data);
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    // Filtering logic based on the searchQuery
+    const filtered = data1.filter((row) => {
+      // Assuming that you want to search in the "Food" column
+      return row.Food.toLowerCase().includes(searchQuery.toLowerCase());
+    });
+    setFilteredData(filtered);
+  }, [data1, searchQuery]);
+  
   return (
     <Box
       sx={{
@@ -39,10 +57,15 @@ export default function DataTable() {
       }}
       justifyContent="center"
     >
-      <TextField fullWidth label="fullwidth" id="fullWidth" />
+      <TextField
+        fullWidth
+        label="Search"
+        id="search"
+        value={searchQuery}
+        onChange={handleSearchChange}/>
     <div style={{ height: 400, width: "100%" }}>
       <DataGrid
-        rows={data1}
+        rows={filteredData}
         columns={columns}
         getRowId={(data1) => data1.Grams}
         initialState={{
