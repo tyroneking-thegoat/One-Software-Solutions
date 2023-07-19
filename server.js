@@ -110,7 +110,7 @@ app.get('/user-profile', (req, res) => {
     const { username } = req.session.user[0];
 
     db.query(
-      'SELECT first_name, last_name, email, calories_burnt_goal, calories_intake_goal FROM accounts WHERE username = ?',
+      'SELECT first_name, last_name, email, calories_burnt_goal, calories_intake_goal, calories_burnt, calories_intake FROM accounts WHERE username = ?',
       [username],
       (err, result) => {
         if (err) {
